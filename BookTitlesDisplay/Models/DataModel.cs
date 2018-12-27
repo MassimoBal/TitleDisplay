@@ -18,7 +18,7 @@ namespace BookTitlesDisplay.Models
 
         public void Populate()
         {
-            _dataAccessor.GetData();
+            _dataAccessor.RefreshData();
             Works = _dataAccessor.WorksByIds;
         }
     }

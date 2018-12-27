@@ -7,9 +7,13 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookTitlesDisplay", "BookTi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookTitlesDisplay.Tests", "BookTitlesDisplay.Tests\BookTitlesDisplay.Tests.csproj", "{D7750B91-7DC1-404A-B72F-9F46A6597F53}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataWrapper", "DataWrapper\DataWrapper.csproj", "{F8854014-763F-4A3D-B0FE-D5D352DEBBCF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataWrapper", "DataWrapper\DataWrapper.csproj", "{F8854014-763F-4A3D-B0FE-D5D352DEBBCF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataRepository", "DataRepository\DataRepository.csproj", "{817DFB0E-0F6F-434F-A463-A6CF0D9E1DB3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataRepository", "DataRepository\DataRepository.csproj", "{817DFB0E-0F6F-434F-A463-A6CF0D9E1DB3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UnitTests", "UnitTests", "{BEF013F1-395E-4287-8760-F7E571877C5A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataWrapper.Tests", "DataWrapperTests\DataWrapper.Tests.csproj", "{2118CCE9-51D1-490A-8FFC-A5F3D9A71EB3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,9 +37,17 @@ Global
 		{817DFB0E-0F6F-434F-A463-A6CF0D9E1DB3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{817DFB0E-0F6F-434F-A463-A6CF0D9E1DB3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{817DFB0E-0F6F-434F-A463-A6CF0D9E1DB3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2118CCE9-51D1-490A-8FFC-A5F3D9A71EB3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2118CCE9-51D1-490A-8FFC-A5F3D9A71EB3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2118CCE9-51D1-490A-8FFC-A5F3D9A71EB3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2118CCE9-51D1-490A-8FFC-A5F3D9A71EB3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{D7750B91-7DC1-404A-B72F-9F46A6597F53} = {BEF013F1-395E-4287-8760-F7E571877C5A}
+		{2118CCE9-51D1-490A-8FFC-A5F3D9A71EB3} = {BEF013F1-395E-4287-8760-F7E571877C5A}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {AD86C8DD-A475-4C02-8816-B0D7C148F8F9}

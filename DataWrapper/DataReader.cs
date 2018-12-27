@@ -8,12 +8,14 @@ namespace DataWrapper
 {
     public class DataReader : IRetrieveData
     {
-      //  private Dictionary<string, WorksById> _worksById;
+        private static readonly log4net.ILog log = log4net.LogManager.GetLogger(typeof(DataReader));
         private RootObject dataContent;
+        private readonly string jsonFile;
 
-        public DataReader()
+        public DataReader(string jsonFile)
         {
             dataContent = null;
+            this.jsonFile = jsonFile;
         }
         public RootObject ReadJson(string jsonFile)
         {
@@ -22,25 +24,23 @@ namespace DataWrapper
                 string json = File.ReadAllText(jsonFile);
                 dataContent = Welcome.FromJson(json);
                 WorksByIds = dataContent.WorksById;
+                return dataContent;
             }
             catch (FileNotFoundException exception)
             {
-                Console.WriteLine(exception);
+                log.Error("File not found", exception);
+                throw;
             }
-            catch (JsonException exception)
+            catch (Exception exception)
             {
-                Console.WriteLine(exception);
+                log.Error("Unknown problem: ", exception);
+                throw;
             }
-
-            return dataContent;
-
         }
 
-        public void GetData()
+        public void RefreshData()
         {
-            var applicationPath = AppDomain.CurrentDomain.BaseDirectory;
-            var getFullPathFileName = Path.GetFullPath(applicationPath + @"\Repository\Graph-Example.json");
-            ReadJson(getFullPathFileName);
+            ReadJson(jsonFile);
         }
 
         public Dictionary<string, WorksById> WorksByIds { get; private set; }    

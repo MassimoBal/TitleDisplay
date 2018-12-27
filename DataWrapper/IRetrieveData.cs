@@ -5,7 +5,7 @@ namespace DataWrapper
 {
     public interface IRetrieveData
     {
-        void GetData();
+        void RefreshData();
         Dictionary<string, WorksById> WorksByIds { get; }
     }
 }
